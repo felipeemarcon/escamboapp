@@ -32,7 +32,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
-
+# Boostrap
+gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
