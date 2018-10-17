@@ -7,7 +7,8 @@ namespace :utils do
         name: Faker::Name.name,
         email: Faker::Internet.email,
         password: '1234567890',
-        password_confirmation: '1234567890'
+        password_confirmation: '1234567890',
+        role: [0,1,1].sample
       )
     end
       puts "Admins cadastrados com sucesso!"

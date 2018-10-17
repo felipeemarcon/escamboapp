@@ -11,7 +11,8 @@ Admin.create!(
   name: 'Felipe Marcon - Administrador geral',
   email: 'admin@admin.com',
   password: '1234567890',
-  password_confirmation: '1234567890'
+  password_confirmation: '1234567890',
+  role: 0
 )
 puts "Admin cadastrado com sucesso!"
 
