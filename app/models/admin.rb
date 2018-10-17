@@ -6,6 +6,12 @@ class Admin < ActiveRecord::Base
 
   enum role: [:full_access, :restricted_access]
 
+  # scope :whit_full_access, -> { where(role: 'full_access') }
+
+  def self.whit_full_access
+    where(role: 'full_access') 
+  end
+
   def role_descrition
     if self.role == 'full_access'
       'Acesso completo'
