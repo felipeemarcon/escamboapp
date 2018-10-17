@@ -32,12 +32,15 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
-# Boostrap
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
-# NotifyJS
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
-# A library for generating fake data such as names, addresses, and phone numbers.
-gem 'faker'
+
+source 'https://rails-assets.org' do 
+  # Boostrap
+  gem 'rails-assets-bootstrap'
+  # NotifyJS
+  gem 'rails-assets-notifyjs'
+  # BootboxJS
+  gem 'rails-assets-bootbox'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -59,6 +62,9 @@ group :development, :test do
 end
 
 group :development do
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
