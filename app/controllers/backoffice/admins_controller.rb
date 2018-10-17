@@ -1,5 +1,5 @@
 class Backoffice::AdminsController < BackofficeController
-  before_action :set_admin, only: [:edit, :update]
+  before_action :set_admin, only: [:edit, :update, :destroy]
 
   def index
     @admins = Admin.all
@@ -12,7 +12,7 @@ class Backoffice::AdminsController < BackofficeController
   def create
     @admin = Admin.new(params_admin)
     if @admin.save
-      redirect_to backoffice_admins_path, notice: "A categoria #{@admin.email} foi cadastrada com sucesso!"
+      redirect_to backoffice_admins_path, notice: "O administrador #{@admin.email} foi cadastrado com sucesso!"
     else 
       render :new
     end
@@ -22,7 +22,6 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-
     passwd = params[:admin][:password]
     passwd_confirmation = params[:admin][:password_confirmation]
 
@@ -32,9 +31,20 @@ class Backoffice::AdminsController < BackofficeController
     end
 
     if @admin.update(params_admin)
-      redirect_to backoffice_admins_path, notice: "A categoria #{@admin.email} foi atualizada com sucesso!"
+      redirect_to backoffice_admins_path, notice: "O administrador #{@admin.email} foi atualizado com sucesso!"
     else 
       render :edit
+    end
+  end
+
+  def destroy
+
+    admin_email = @admin.email
+    
+    if @admin.destroy
+      redirect_to backoffice_admins_path, notice: "O administrador #{admin_email} foi excluído com sucesso!"
+    else
+      render :index
     end
   end
 
