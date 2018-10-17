@@ -7,12 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Cadastrando Admin..."
-Admin.first_or_create(
+Admin.create!(
   email: 'admin@admin.com',
   password: '1234567890',
   password_confirmation: '1234567890'
 )
 puts "Admin cadastrado com sucesso!"
+
+#############
 
 puts "Cadastrando categorias..."
 categories = [ "Animais e acessórios",

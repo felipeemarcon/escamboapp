@@ -24,7 +24,7 @@ class Backoffice::CategoriesController < BackofficeController
 
   def update
     if @category.update(params_category)
-      redirect_to backoffice_categories_path, notice: "A categoria '#{@category.description}' foi atualizada com sucesso!"
+      redirect_to backoffice_categories_path, notice: "A categoria #{@category.description} foi atualizada com sucesso!"
     else 
       render :edit
     end
