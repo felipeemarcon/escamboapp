@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap_sb_admin_base_v2'
 # Boostrap
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+# NotifyJS
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
