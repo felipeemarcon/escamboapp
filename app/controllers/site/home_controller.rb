@@ -1,6 +1,4 @@
-class Site::HomeController < ApplicationController
-
-  layout "site"
+class Site::HomeController < BackofficeController
 
   def index
     @categories = Category.all
