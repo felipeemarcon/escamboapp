@@ -4,6 +4,7 @@ namespace :utils do
     puts "Cadastrando Admins..."
     10.times do 
       Admin.create!(
+        name: Faker::Name.name,
         email: Faker::Internet.email,
         password: '1234567890',
         password_confirmation: '1234567890'
