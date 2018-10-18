@@ -1,0 +1,10 @@
+'pt-BR':
+  general:
+    created_at: Criado em
+    updated_at: Atualiza em
+    email: E-mail
+    password: Senha
+    password_confirmation: Confirmação de senha
+    description: Descrição
+    category_id: Código da categoria
+    member_id: Código do usuário

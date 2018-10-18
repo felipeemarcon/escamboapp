@@ -1,0 +1,9 @@
+'pt-BR':
+  buttons:
+    save: Salvar
+    cancel: Cancelar
+    submit: Enviar
+    reset: Limpar
+    add: Adicionar
+    edit: Editar
+    delete: Deletar
