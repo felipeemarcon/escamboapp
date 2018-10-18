@@ -4,8 +4,11 @@
 <div class="panel panel-default">
 <div class="panel-heading">
 		<%= t('messages.listing', model: @admins.model_name.human(count: 2)) %>
-		<%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
-			<i class="fa fa-plus"></i>
+
+		<% if policy(@admins).new? %>
+			<%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
+				<i class="fa fa-plus"></i>
+			<% end %>
 		<% end %>
 </div>
 <!-- /.panel-heading -->
@@ -33,7 +36,7 @@
 							<i class="fa fa-edit"></i>
 						<% end %>
 
-						<% if current_admin.id != admin.id %>
+						<% if current_admin.id != admin.id && policy(@admins).destroy? %>
 							<%= link_to backoffice_admin_path(admin), method: :delete, class: "btn btn-danger btn-circle", data: {confirm: t('messages.confirm_with', item: admin.name )} do %>
 								<i class="fa fa-times"></i>
 							<% end %>
