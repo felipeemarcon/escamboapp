@@ -4,8 +4,14 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum role: {:full_access => 0, :restricted_access => 1}
+  # Constants
+  ROLES = {:full_access => 0, :restricted_access => 1}
+  
+  # Enums
+  enum role: ROLES
 
-  scope :whit_full_access, -> { where(role: 'full_access') } 
+  # Scopes
+  scope :whit_full_access, -> { where(role: 0) } 
+  scope :whit_restricted_access, -> { where(role: 1) } 
   
 end
