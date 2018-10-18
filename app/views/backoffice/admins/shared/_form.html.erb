@@ -18,15 +18,15 @@
   <div class="col-lg-4">
     <%= form_for([:backoffice, @admin]) do |f| %>
       <div class="form-group">
-          <label>Nome</label>
+          <%= f.label :name %>
           <%= f.text_field :name, class: "form-control", placeholder: "John Snow" %>
       </div>
       <div class="form-group">
-          <label>E-mail</label>
+          <%= f.label :email %>
           <%= f.text_field :email, class: "form-control", placeholder: "teste@teste.com" %>
       </div>
       <div class="form-group">
-          <label>Tipo de acesso</label>
+          <%= f.label :role %>
           <%= f.collection_radio_buttons(:role, options_for_roles, :id, :description) do |b| %>
             <div class="radio">
               <%= b.label {b.radio_button + b.text} %>
@@ -34,11 +34,11 @@
           <% end %>
       </div>
       <div class="form-group">
-          <label>Senha</label>
+          <%= f.label :password %>
           <%= f.password_field :password, class: "form-control", placeholder: "Senha" %>
       </div>
       <div class="form-group">
-          <label>Confirmação da senha</label>
+          <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirmação da senha" %>
       </div>
       <button type="submit" class="btn btn-default">Salvar</button>
