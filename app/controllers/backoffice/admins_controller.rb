@@ -30,6 +30,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def update
     if @admin.update(params_admin)
+      AdminMailer.update_email(current_admin, @admin).deliver_now
       redirect_to backoffice_admins_path, notice: "O administrador #{@admin.email} foi atualizado com sucesso!"
     else 
       render :edit
@@ -60,6 +61,6 @@ class Backoffice::AdminsController < BackofficeController
         params[:admin].except!(:password, :password_confirmation)
       end
 
-      params.require(:admin).permit(policy(@admin).permieted_attributes)
+      params.require(:admin).permit(policy(@admin).permited_attributes)
     end
 end
