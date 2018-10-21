@@ -9,8 +9,9 @@ class Backoffice::SendMailController < ApplicationController
   end 
 
   def create
+    AdminMailer.send_message(current_admin, params[:'recipient-mail'], params[:'subject-text'], params[:'message-text']).deliver_now
 
-     respond_to do |format|
+    respond_to do |format|
       format.js
     end
     

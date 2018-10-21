@@ -11,7 +11,7 @@ class AdminMailer < ApplicationMailer
     @recipient = recipient
     @subject = subject
     @message = message
-    mail(to: @recipient.email, subject: @subject)
+    mail(to: @recipient, subject: @subject)
   end
 
 end

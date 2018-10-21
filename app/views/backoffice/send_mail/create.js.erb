@@ -1,0 +1,13 @@
+$(function(){
+
+  let sendMailModal = $('#sendMailModal');
+  let subjectText = $('#subject-text');
+  let messageText = $('#message-text');
+  
+  sendMailModal.modal('hide');
+
+  subjectText.val('');
+  messageText.val('');
+
+  $.notify('E-mail enviado com sucesso!', 'success')
+});
