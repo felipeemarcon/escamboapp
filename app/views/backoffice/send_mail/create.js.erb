@@ -9,5 +9,5 @@ $(function(){
   subjectText.val('');
   messageText.val('');
 
-  $.notify('E-mail enviado com sucesso!', 'success')
+  $.notify('<%= @notify_message %>', '<%= @notify_flag %>')
 });
