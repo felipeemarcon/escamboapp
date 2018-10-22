@@ -3,7 +3,7 @@ class Site::HomeController < ApplicationController
   layout "site"
 
   def index
-    @categories = Category.order(:description)
-    @ads = Ad.order(created_at: :desc).limit(6)
+    @categories = Category.order_by_description
+    @ads = Ad.last_six
   end
 end
