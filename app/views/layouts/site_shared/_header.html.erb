@@ -19,6 +19,9 @@
             <%= link_to current_member.email, "#", class: "nav-link" %>
           </li>
           <li class="nav-item active">
+            <%= link_to 'Perfil', site_profile_dashboard_index_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to 'Sair', destroy_member_session_path, method: :delete, class: "nav-link" %>
           </li>
         <% end %>

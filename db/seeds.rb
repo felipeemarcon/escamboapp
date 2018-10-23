@@ -18,13 +18,13 @@ puts "Admin cadastrado com sucesso!"
 
 #############
 
-puts "Cadastrando Membro..."
+puts "Cadastrando Membro padrão..."
 Member.create!(
   email: 'membro@membro.com',
   password: '1234567890',
   password_confirmation: '1234567890',
 )
-puts "Membro cadastrado com sucesso!"
+puts "Membro padrão cadastrado com sucesso!"
 
 #############
 
