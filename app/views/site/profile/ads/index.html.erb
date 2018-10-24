@@ -3,7 +3,8 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Imagem</th>
-      <th scope="col">Descrição</th>
+      <th scope="col">Título</th>
+      <th scope="col">Categoria</th>
       <th scope="col">Preço</th>
     </tr>
   </thead>
@@ -12,7 +13,8 @@
     <tr>
       <th scope="row"><%= ad.id %></th>
       <td><%= image_tag ad.picture.url(:thumb) %></td>
-      <td><%= ad.description %></td>
+      <td><%= ad.title %></td>
+      <td><%= ad.category.description %></td>
       <td><%= humanized_money_with_symbol(ad.price) %></td>
     </tr>
   <% end %>
