@@ -1,0 +1,49 @@
+<h1>Editando anúncio</h1>
+
+<%= form_for([:site, :profile, @ad]) do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", placeholder: "Títutlo" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :category %>
+        <%= f.collection_select :category_id, Category.all, :id, :description, {}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :price %>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><%= @ad.price.currency.symbol %></span>
+          </div>
+           <%= f.text_field :price, class: "form-control", placeholder: "Preço", required: "required" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :picture, class: "d-block" %>
+        <%= image_tag @ad.picture(:medium), class: "img-thumbnail d-block" %>
+        <%= f.file_field :picture, class: "d-block pt-4" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control", placeholder: "Descrição", rows: 15 %>
+      </div>
+    </div>
+  </div>
+  <%= submit_tag "Atualizar", class: "btn btn-primary" %>
+<% end %>
