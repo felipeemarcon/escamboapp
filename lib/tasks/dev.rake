@@ -1,7 +1,7 @@
-namespace :utils do
+namespace :dev do
 
   desc "Setup Development"
-  task setup_dev: :environment do
+  task setup: :environment do
 
     images_path = Rails.root.join('public', 'system')
 
@@ -11,9 +11,9 @@ namespace :utils do
     puts "Criando banco de dados #{%x(rake db:create)}"
     puts %x(rake db:migrate)
     puts %x(rake db:seed)
-    puts %x(rake utils:generate_admins)
-    puts %x(rake utils:generate_members)
-    puts %x(rake utils:generate_ads)
+    puts %x(rake dev:generate_admins)
+    puts %x(rake dev:generate_members)
+    puts %x(rake dev:generate_ads)
     puts "Setup executado com sucesso!"
   end
 
@@ -55,6 +55,16 @@ namespace :utils do
   desc "Cria anúncios fake"
   task generate_ads: :environment do 
     puts "Cadastrando anúncios..."
+
+    5.times do 
+       Ad.create!(
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description: Faker::Lorem.paragraph([3..5].sample),
+        member: Member.first,
+        category: Category.all.sample,
+        price: "#{Random.rand(500)},#{Random.rand(99)}",
+        picture: File.new(Rails.root.join('public', 'templates', 'images_for_ads', "#{Random.rand(13)}.jpg"), 'r'))
+    end
 
     100.times do 
       Ad.create!(
