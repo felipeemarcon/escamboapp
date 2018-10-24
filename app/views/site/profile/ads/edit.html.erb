@@ -1,6 +1,6 @@
 <h1>Editando anúncio</h1>
 
-<%= form_for([:site, :profile, @ad]) do |f| %>
+<%= form_for([:site, :profile, @ad], html: { mutipart: true }) do |f| %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
