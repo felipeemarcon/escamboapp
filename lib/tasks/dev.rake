@@ -57,14 +57,14 @@ namespace :dev do
     puts "Cadastrando anúncios..."
 
     5.times do 
-       Ad.create!(
+      Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
         description: Faker::Lorem.paragraph([3..5].sample),
         member: Member.first,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",
         finish_date: Date.today + Random.rand(90),
-        picture: File.new(Rails.root.join('public', 'templates', 'images_for_ads', "#{Random.rand(13)}.jpg"), 'r'))
+        picture: File.new(Rails.root.join('public', 'templates', 'images_for_ads', "#{Random.rand(12)}.jpg"), 'r'))
     end
 
     100.times do 
