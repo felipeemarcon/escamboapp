@@ -12,9 +12,6 @@
 		<title>Backoffice - Escamboapp</title>
 		<%= stylesheet_link_tag    'application', media: 'all' %>
 		<%= stylesheet_link_tag    'backoffice', media: 'all' %>
-
-		<%= javascript_include_tag 'application' %>
-		<%= javascript_include_tag 'backoffice' %>
 		
 		<%= csrf_meta_tags %>
 
@@ -49,6 +46,9 @@
 		<!-- /#page-wrapper -->
 		</div>
 		<!-- /#wrapper -->
+
+	<%= javascript_include_tag 'application' %>
+	<%= javascript_include_tag 'backoffice' %>
 
 	<% if notice %>
 		<%= javascript_tag "$.notify('#{notice}', 'success');" %>
