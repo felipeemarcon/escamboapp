@@ -39,17 +39,19 @@ gem "pundit"
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 # Easy file attachment management for ActiveRecord 
-gem "paperclip"
+gem "paperclip" 
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do 
   # Boostrap
   gem 'rails-assets-bootstrap'
-  # NotifyJS
-  gem 'rails-assets-notifyjs'
+  # Boostrap Notify
+  gem 'rails-assets-bootstrap.growl'
   # BootboxJS
   gem 'rails-assets-bootbox'
+  # Animate.css
+  gem 'rails-assets-animate.css'
 end
 
 # Use ActiveModel has_secure_password
