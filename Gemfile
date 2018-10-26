@@ -47,6 +47,7 @@ gem 'redcarpet'
 
 source 'https://rails-assets.org' do 
   # Boostrap
+  # gem 'rails-assets-bootstrap'
   gem 'rails-assets-bootstrap'
   # Boostrap Notify
   gem 'rails-assets-bootstrap.growl'

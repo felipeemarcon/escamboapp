@@ -73,7 +73,7 @@
     <div class="col-md-8">
       <div class="form-group">
         <%= f.label :description_md %>
-        <%= f.text_area :description_md, class: "form-control", placeholder: "Descrição", rows: 15 %>
+        <%= f.text_area :description_md, class: "form-control textarea_markdown", placeholder: "Descrição", rows: 15, data: { provide: 'markdown' } %>
       </div>
     </div>
   </div>
