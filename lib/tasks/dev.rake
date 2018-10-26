@@ -59,7 +59,8 @@ namespace :dev do
     5.times do 
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
-        description: md_fake,
+        description_md: md_fake,
+        description_short: Faker::Lorem.paragraph([2,3].sample),
         member: Member.first,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",
@@ -70,7 +71,8 @@ namespace :dev do
     100.times do 
       Ad.create!(
         title: Faker::Lorem.sentence([2,3,4,5].sample),
-        description: md_fake,
+        description_md: md_fake,
+        description_short: Faker::Lorem.paragraph([2,3].sample),
         member: Member.all.sample,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",

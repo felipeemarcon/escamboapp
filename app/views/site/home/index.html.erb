@@ -54,7 +54,7 @@
 									<%= link_to truncate(ad.title, length: 20), site_ad_detail_path(ad), remote: true %>
 								</h4>
 								<h5><%= humanized_money_with_symbol(ad.price) %> </h5>
-								<p class="card-text"><%= truncate(ad.description, length: 50) %></p>
+								<p class="card-text"><%= truncate(ad.description_short, length: 50) %></p>
 							</div>
 							<div class="card-footer">
 								<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
