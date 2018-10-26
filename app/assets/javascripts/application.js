@@ -13,5 +13,14 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require animateCSS
 //= require bootstrap.growl
+
+// Spin
+$(document).ready(function() {
+  let globalSpinner = $('#global-spinner');
+  $(document).ajaxStart(function (){
+    globalSpinner.fadeIn('slow')
+  }).ajaxStop(function() {
+    globalSpinner.fadeOut('slow')
+  });
+});

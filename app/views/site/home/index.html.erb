@@ -6,7 +6,7 @@
 		<div class="col-lg-3">
 
 			<h1 class="my-4">Categorias</h1>
-			<div class="list-group">
+			<div id="home-sidebar" class="list-group">
 				<% @categories.each do |category| %>
 					<a href="#" class="list-group-item"><%= category.description %></a>
 				<% end %>
@@ -15,7 +15,7 @@
 		</div>
 		<!-- /.col-lg-3 -->
 
-		<div class="col-lg-9">
+		<div id="home-detail" class="col-lg-9">
 
 			<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -51,7 +51,7 @@
 							<a href="#"><%= image_tag ad.picture(:display), class: "card-img-top" %></a>
 							<div class="card-body">
 								<h4 class="card-title">
-									<a href="#"><%= truncate(ad.title, length: 20) %></a>
+									<%= link_to truncate(ad.title, length: 20), site_ad_detail_path(ad), remote: true %>
 								</h4>
 								<h5><%= humanized_money_with_symbol(ad.price) %> </h5>
 								<p class="card-text"><%= truncate(ad.description, length: 50) %></p>

@@ -12,7 +12,7 @@ class Ad < ActiveRecord::Base
   scope :to_the, -> (member) { where(member: member) }
 
   # paperclip
-  has_attached_file :picture, styles: { medium: "320x150", thumb: "100X100#", display: "700x400#" }, default_url: "/images/:style/missing.png"
+  has_attached_file :picture, styles: { medium: "320x150", thumb: "100X100#", display: "900x400#" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   # Gem money-rails
