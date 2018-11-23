@@ -1,5 +1,9 @@
 class Category < ActiveRecord::Base
-  validates_presence_of :description
+
+  has_many :ads
+
+  # Validations
+  validates :description, presence: true
 
   # Scopes
   scope :order_by_description, -> { order(:description) }
