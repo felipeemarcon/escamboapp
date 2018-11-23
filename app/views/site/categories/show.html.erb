@@ -5,13 +5,12 @@
 		<%= render partial: "site/shared/sidebar" %>
 
 		<div id="home-detail" class="col-md-9">
-
-			<%= render partial: "site/shared/carousel" %>
-
 			<div class="row">
+        <div class="well">
+          <h2><%= @ads.first.category.description %></h2>
+        </div>
 				<%= render partial: "site/shared/ads" %>
 			</div>
-
 		</div>
 	</div>
 </div>

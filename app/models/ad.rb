@@ -15,6 +15,7 @@ class Ad < ActiveRecord::Base
   # Scopes
   scope :descending_order, -> (quantity = 10) { order(created_at: :desc).limit(quantity) }
   scope :to_the, -> (member) { where(member: member) }
+  scope :where_category, -> (id) { where(category: id) }
 
   # paperclip
   has_attached_file :picture, styles: { medium: "320x150", thumb: "100X100#", display: "900x400#" }, default_url: "/images/:style/missing.png"
