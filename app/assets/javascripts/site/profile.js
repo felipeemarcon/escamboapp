@@ -2,8 +2,6 @@
 //= require jquery-ui/i18n/datepicker-pt-BR
 
 //= require site/profile/ads
-<<<<<<< HEAD
-=======
 //= require bootstrap-markdown
 //= require marked
 
@@ -37,4 +35,3 @@
   $('#ad_description_md').markdown({ language:'ptBR' });
 
 }(jQuery));
->>>>>>> ed345ac93d3b26c32c8f731bf7b5a3c85f238061
