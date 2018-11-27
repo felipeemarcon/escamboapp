@@ -1,5 +1,5 @@
 <div class="card mt-4">
-  <%= image_tag @ad.picture(:display), html: { class: "card-img-top img-fluid", alt: @ad.title } %>
+  <%= image_tag @ad.picture(:display), html: { class: "card-img-top img-fluid", alt: @ad.title }, style: "width: 100%" %>
   <div class="card-body">
     <h3 class="card-title"><%= @ad.title %></h3>
     <h4><%= humanized_money_with_symbol @ad.price %></h4>
