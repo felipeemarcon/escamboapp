@@ -1,8 +1,8 @@
 class Site::SearchController < SiteController
 
   def ads
+    @ads = Ad.search(params[:q], params[:page])
     @categories = Category.order_by_description
-    @ads = Ad.where(title: params[:q])
   end
 
 end
