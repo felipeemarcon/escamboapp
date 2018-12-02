@@ -1,6 +1,6 @@
 <% @ad.comments.each do |comment| %>
   <p><%= comment.body %></p>
-  <% if comment.member.id == current_member.id %>
+  <% if (current_member) && (comment.member.id == current_member.id) %>
     <%= rating_for_user @ad, current_member, 'quality' %>
   <% end %>
   <small class="text-muted">Posted by <%= comment.member.email %> on <%= l comment.created_at %></small>
