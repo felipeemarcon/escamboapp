@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       resources :ads, except: [:destroy]
     end
 
-    resources :ad_detail, only: [:show]
+    resources :ad_detail, only: [:index, :show]
     resources :categories, only: [:show]
     resources :comments, only: [:create]
   end
