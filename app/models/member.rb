@@ -4,6 +4,10 @@ class Member < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # RatyRate Gem 
+  ratyrate_rater
+
+  # Associations
   has_many :ads
   has_many :comments
 end

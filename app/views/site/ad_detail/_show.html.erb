@@ -5,6 +5,12 @@
     <h4><%= humanized_money_with_symbol @ad.price %></h4>
     <div><%= @ad.description.html_safe %></div>
   </div>
+
+  <div class="ratings">
+    <p class="pull-right">3 reviews</p>
+    <p><%= rating_for @ad, 'quality' %></p>
+  </div>
+
 </div>
 <!-- /.card -->
 

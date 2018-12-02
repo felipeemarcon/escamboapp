@@ -1,6 +1,8 @@
 <% @ad.comments.each do |comment| %>
-  <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>4.0 stars
   <p><%= comment.body %></p>
+  <% if comment.member.id == current_member.id %>
+    <%= rating_for_user @ad, current_member, 'quality' %>
+  <% end %>
   <small class="text-muted">Posted by <%= comment.member.email %> on <%= l comment.created_at %></small>
   <hr>
 <% end %>
