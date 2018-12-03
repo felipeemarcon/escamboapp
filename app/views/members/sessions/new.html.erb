@@ -1,36 +1,32 @@
 <div class="container">    
-  <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 offset-md-3 col-sm-8 offset-sm-2">                   
-    <div class="card border-info" >
-      <div class="card-header">
+  <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-push-3 col-sm-8 col-sm-push-2">                   
+    <div class="panel panel-info" >
+      <div class="panel-heading">
         <div class="row">
-          <div class="col-6">
-            <div>Sign In</div>
+          <div class="col-sm-6">
+            <div class="panel-title">Entrar</div>
           </div>
-          <div class="col-6">
+          <div class="col-sm-6">
             <div style="float: right; font-size: 14px"><a href="#">Esqueceu sua senha?</a></div>
           </div>
         </div>
         
       </div>     
 
-      <div style="padding-top:30px" class="card-body">
+      <div style="padding-top:30px" class="panel-body">
         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>    
           <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal", role: "form"})  do |f| %> 
             <div style="margin-bottom: 25px" class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-              </div>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "E-mail" %>
             </div>    
             <div style="margin-bottom: 25px" class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
-              </div>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
               <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Senha" %>
             </div>
             <div class="input-group">
               <div class="checkbox">
-                <label style="display: flex; align-items: center;">
+                <label>
                   <% if devise_mapping.rememberable? %>
                     <%= f.check_box :remember_me, style: "margin-right: 7px" %>
                     <%= f.label :remember_me, class: "m-0" %>
@@ -40,22 +36,18 @@
             </div>
             <div style="margin-top:10px" class="form-group">
               <!-- Button -->
-              <div class="row">
                 <div class="col-sm-12 controls">
                   <%= f.submit "Entrar", class: "btn btn-success" %>
-                  <!-- <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a> -->
+                  <a id="btn-fblogin" href="#" class="btn btn-primary" disabled="disabled">Login with Facebook</a>
                 </div>
-              </div>
             </div>
 
             <div class="form-group">
-              <div class="row">
-                <div class="col-md-12 control">
-                  <%#= render "members/shared/links" %>
-                  <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                      Don't have an account! 
-                    <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">Sign Up Here</a>
-                  </div>
+              <div class="col-md-12 control">
+                <%= render "members/shared/links" %>
+                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                    Don't have an account! 
+                  <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">Sign Up Here</a>
                 </div>
               </div>
             </div>    
@@ -70,7 +62,7 @@
                     <div class="panel-title">Sign Up</div>
                     <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
                 </div>  
-                <div class="card-body" >
+                <div class="panel-body" >
                     <form id="signupform" class="form-horizontal" role="form">
                         
                         <div id="signupalert" style="display:none" class="alert alert-danger">
