@@ -27,7 +27,9 @@ class Ad < ActiveRecord::Base
     where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE)
   }
   scope :to_the, -> (member) { where(member: member) }
-  scope :by_category, -> (id) { where(category: id) }
+  scope :by_category, -> (id, page) { 
+    where(category: id).page(page).per(QTT_PER_PAGE) 
+  }
 
   # paperclip
   has_attached_file :picture, styles: { medium: "320x150", thumb: "100X100#", display: "900x400#" }, default_url: "/images/:style/missing.png"
