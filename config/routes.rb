@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     namespace :profile do 
       resources :dashboard, only: [:index]
       resources :ads, except: [:destroy]
+      resources :my_data, only: [:edit, :update]
     end
 
     resources :ad_detail, only: [:index, :show]
