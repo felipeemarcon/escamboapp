@@ -10,4 +10,5 @@ class Member < ActiveRecord::Base
   # Associations
   has_many :ads
   has_many :comments
+  has_one :profile_member
 end
