@@ -28,10 +28,10 @@
       <div class="form-group">
         <%= f.label :birthdate %>
         <div class="input-group">
-           <%= f.text_field :birthdate, class: "form-control datepicker", value: (l(@profile_member.finish_date) unless @profile_member.birthdate.blank?) %>
+           <%= f.text_field :birthdate, class: "form-control datepicker", value: (l(@profile_member.birthdate) unless @profile_member.birthdate.blank?) %>
         </div>
       </div>
     </div>
   </div>
-  <%= submit_tag "Salvar alterações", class: "btn btn-primary" %>
+  <%= submit_tag "Salvar alterações", class: "btn btn-success" %>
 <% end %>
