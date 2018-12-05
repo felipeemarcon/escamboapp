@@ -63,12 +63,6 @@
       </div>  
       <div class="panel-body">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal", role: "form" }) do |f| %>
-          <% unless devise_error_messages!.blank? %>
-            <div id="signupalert" class="alert alert-danger">
-              <p>Errors:</p>
-              <span><%= devise_error_messages! %></span>
-            </div>
-          <% end %>
           <div class="form-group">
             <%= f.label :email, class: "col-md-3 control-label" %>
             <div class="col-md-9"> 
@@ -114,3 +108,13 @@
     </div>
   </div>
 </div>
+
+<% flash.each do |key, value| %>
+  <%= javascript_tag "$.notify({message: '#{value}' },{type: 'danger', placement: {from: 'bottom', align: 'right'}, animate: {enter: 'animated fadeInUp', exit: 'animated fadeOutDown'}});" %>
+<% end %>
+
+<% unless devise_error_messages!.blank? %>
+  <% resource.errors.full_messages.each do |message| %>
+    <%= javascript_tag "$.notify({message: '#{message}' },{type: 'danger', placement: {from: 'bottom', align: 'right'}, animate: {enter: 'animated fadeInUp', exit: 'animated fadeOutDown'}});" %>
+  <% end %>
+<% end %>
