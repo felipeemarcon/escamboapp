@@ -11,4 +11,6 @@ class Member < ActiveRecord::Base
   has_many :ads
   has_many :comments
   has_one :profile_member
+  accepts_nested_attributes_for :profile_member
+  
 end

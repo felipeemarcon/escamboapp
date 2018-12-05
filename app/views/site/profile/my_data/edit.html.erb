@@ -16,15 +16,23 @@
 
 <%= form_for(@profile_member, url: site_profile_my_datum_path(@profile_member)) do |f| %>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-5">
       <div class="form-group">
         <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: "form-control", placeholder: "Primeiro nome" %>
+        <%= f.text_field :first_name, class: "form-control", placeholder: "Nome" %>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control", placeholder: "Sobrenome" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
       <div class="form-group">
         <%= f.label :birthdate %>
         <div class="input-group">
