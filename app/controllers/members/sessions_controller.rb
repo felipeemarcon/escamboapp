@@ -16,5 +16,4 @@ class Members::SessionsController < Devise::SessionsController
         site_profile_dashboard_index_path
       end
     end
-
 end
